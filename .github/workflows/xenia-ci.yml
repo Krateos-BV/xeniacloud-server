@@ -36,6 +36,15 @@ jobs:
     name: PHPUnit (PHP 8.3) — ${{ inputs.ref }}
 
     steps:
+      # Do NOT add caching (actions/cache, setup-php's cache-extensions, or any
+      # other cache-writing step) to this job. `ref` is free-text and
+      # workflow_dispatch always evaluates in the default branch's context, so a
+      # cache written here is scoped to master and could be restored by another
+      # master workflow. This repo holds master-scoped
+      # `codeql-overlay-base-database-*` entries, so the poisoning target would
+      # be CodeQL's own analysis database. CodeQL flagged exactly this pattern
+      # and it was dismissed only because nothing here writes a cache today
+      # (XNT-186) - adding one re-opens the hole.
       - name: Checkout ${{ inputs.ref }}
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
