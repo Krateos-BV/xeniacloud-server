@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 XeniaCloud
+# SPDX-License-Identifier: MIT
+
 # XeniaCloud fork CI.
 #
 # Deliberately narrow: this fork exists to carry core patches (XNT-104), not to

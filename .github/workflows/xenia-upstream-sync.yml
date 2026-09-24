@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 XeniaCloud
+# SPDX-License-Identifier: MIT
+
 name: Xenia Upstream Sync
 
 # Periodically checks nextcloud/server:master for commits we don't have yet and
