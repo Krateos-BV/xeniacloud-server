@@ -9,6 +9,7 @@ on:
     branches:
       # implemented since 35, once branched off, add your stable branch here
       - master
+      - main
       - stable35
 
 permissions:
